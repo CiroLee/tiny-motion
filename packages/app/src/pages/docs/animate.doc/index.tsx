@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { animate } from 'ease-motion';
+import { animate } from 'tiny-motion';
 import Heading from '@/ui/Heading';
 import Playground from '@/components/Playground';
 import Button from '@/ui/Button';
@@ -8,7 +8,7 @@ import PageNavigate from '@/components/PageNavigate';
 import ApiTable from '@/components/ApiTable';
 import { rows } from './api';
 
-const code = `import { animate } from 'ease-motion;
+const code = `import { animate } from 'tiny-motion;
 
 export default function App() {
  const ref = useRef<HTMLDivElement>(null);
@@ -72,7 +72,7 @@ export default function AnimateDoc() {
       <ApiTable rows={rows} />
       <div className="my-12 flex justify-between">
         <PageNavigate direction="prev" path="/docs/use-spring">
-          overview
+          useSpring
         </PageNavigate>
       </div>
     </>

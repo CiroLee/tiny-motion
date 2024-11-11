@@ -1,5 +1,5 @@
 export const code1 = `import { useRef } from 'react';
-import { useInView, animate } from 'ease-motion';
+import { useInView, animate } from 'tiny-motion';
 
 export default function App() {
 const ref = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ useInView({
 `;
 
 export const code2 = `import { useRef } from 'react';
-import { useInView, useGroup, EASING_FUNCTIONS } from 'ease-motion';
+import { useInView, useGroup, EASING_FUNCTIONS } from 'tiny-motion';
 
 export default function App() {
 const ref = useRef<HTMLDivElement>(null);

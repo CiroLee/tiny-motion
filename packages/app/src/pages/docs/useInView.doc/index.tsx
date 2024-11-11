@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Heading from '@/ui/Heading';
 import Playground from '@/components/Playground';
-import { useInView, animate, useGroup, EASING_FUNCTIONS } from 'ease-motion';
+import { useInView, animate, useGroup, EASING_FUNCTIONS } from 'tiny-motion';
 import PageNavigate from '@/components/PageNavigate';
 import CodeBlock from '@/components/CodeBlock';
 import { code1, code2 } from './codes';

@@ -1,4 +1,4 @@
-import type { EaseFunctionType } from 'ease-motion';
+import type { EaseFunctionType } from 'tiny-motion';
 interface SvgIconProps {
   name: EaseFunctionType;
   fill?: string;

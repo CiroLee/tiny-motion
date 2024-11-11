@@ -5,7 +5,7 @@ import Heading from '@/ui/Heading';
 import Slider from '@/ui/Slider';
 import CodeBlock from '@/components/CodeBlock';
 import { code1, typeCode } from './codes';
-import { useSpring } from 'ease-motion';
+import { useSpring } from 'tiny-motion';
 import Tag from '@/ui/Tag';
 import { Link } from 'react-router-dom';
 import ApiTable from '@/components/ApiTable';

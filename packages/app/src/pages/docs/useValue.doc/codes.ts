@@ -1,4 +1,4 @@
-export const code = `import { useValue } from 'ease-motion';
+export const code = `import { useValue } from 'tiny-motion';
 
 export default function App() {
   const [value, controller] = useValue(0, 100 {

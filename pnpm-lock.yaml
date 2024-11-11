@@ -56,7 +56,7 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      ease-motion:
+      tiny-motion:
         specifier: workspace:*
         version: link:../lib
       react:

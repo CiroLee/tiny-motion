@@ -1,11 +1,11 @@
-# ease-motion
+# tiny-motion
 
 The high-performance extension of Web Animation API for React Hooks
 
 # Install
 
 ```bash
-npm install ease-motion
+npm install tiny-motion
 ```
 
 # Usage
@@ -16,14 +16,14 @@ the preset motions
 
 ```ts
 // App.tsx
-import { useMotion } from 'ease-motion';
+import { useMotion } from 'tiny-motion';
 
 export default function App() {
   const [ ref, motion ] = useMotion<HTMLDivElement>()
 
   return (
     <div>
-      <div ref={ref} className="text-3xl">ease-motion</div>
+      <div ref={ref} className="text-3xl">tiny-motion</div>
       <button onClick={() => motion('swing')}>play</button>
     </div>
   )
@@ -35,7 +35,7 @@ export default function App() {
 basic wrap of [Web Animation API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)
 
 ```ts
-import { useAnimate} from 'ease-motion;'
+import { useAnimate} from 'tiny-motion;'
 export default function App() {
   const [ ref, animate ] = useAnimate<HTMLDivElement>();
   return (
@@ -69,7 +69,7 @@ export default function App() {
 useGroup is used to control multiple elements to animate with the same parameters
 
 ```ts
-import { useGroup, EASING_FUNCTIONS } from 'ease-motion';
+import { useGroup, EASING_FUNCTIONS } from 'tiny-motion';
 
 export default function App() {
   const ballRef1 = useRef<HTMLDivElement>(null);
@@ -133,7 +133,7 @@ useMultiple is used to control the animation of multiple elements using independ
 
 ```ts
 import { useRef } from 'react';
-import { useMultiple } from 'ease-motion';
+import { useMultiple } from 'tiny-motion';
 
 export default function App() {
   const ballRef1 = useRef<HTMLDivElement>(null);
@@ -204,7 +204,7 @@ used to make svg elements(such as path, circle) to have a line animation effect
 
 ```ts
 import { useRef } from 'react';
-import { useLineDraw } from 'ease-motion';
+import { useLineDraw } from 'tiny-motion';
 
 export default function App() {
   const path1Ref = useRef<SVGPathElement>(null);
@@ -249,7 +249,7 @@ export default function App() {
 useValue is used to animate numbers
 
 ```ts
-import { useValue } from 'ease-motion';
+import { useValue } from 'tiny-motion';
 
 export default function App() {
   const [value, controller] = useValue(0, 100 {
@@ -286,7 +286,7 @@ export default function App() {
 used to simulate the real physical spring motion effect
 
 ```ts
-import { useSpring } from 'ease-motion';
+import { useSpring } from 'tiny-motion';
 
 export default function App() {
   const [y, controller] = useSpring({ from: 0, to: 240, autoPlay: false });

@@ -2,7 +2,7 @@ import PageNavigate from '@/components/PageNavigate';
 import Playground from '@/components/Playground';
 import Heading from '@/ui/Heading';
 import Button from '@/ui/Button';
-import { useValue } from 'ease-motion';
+import { useValue } from 'tiny-motion';
 import CodeBlock from '@/components/CodeBlock';
 import { code, typesCode } from './codes';
 import ApiTable from '@/components/ApiTable';

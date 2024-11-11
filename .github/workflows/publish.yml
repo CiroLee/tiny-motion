@@ -1,0 +1,28 @@
+name: Package Publish
+
+on:
+  push:
+   tags:
+    - "v*"
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v4
+   - name: setup pnpm
+     uses: pnpm/action-setup@v4
+     with:
+      version: 8
+   - uses: actions/setup-node@v4
+     with:
+       node-version: '20.x'
+       registry-url: 'https://registry.npmjs.org'
+   - name: install
+     run: pnpm install
+   - name: build lib
+     run: npm run build:lib
+   - name: publish
+     run: npm run publish
+     env:
+       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
