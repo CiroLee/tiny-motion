@@ -1,5 +1,5 @@
 export const code1 = `import { useRef } from 'react';
-import { useMultiple } from 'tiny-motion';
+import { useMultiple } from '@cirolee/tiny-motion';
 
 export default function App() {
   const ballRef1 = useRef<HTMLDivElement>(null);
@@ -64,7 +64,7 @@ export default function App() {
 }`;
 
 export const code2 = `import { useRef } from 'react';
-import { useMultiple } from 'tiny-motion';
+import { useMultiple } from '@cirolee/tiny-motion';
 
 export default function App() {
   const ballRef1 = useRef<HTMLDivElement>(null);

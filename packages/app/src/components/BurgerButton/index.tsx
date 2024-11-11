@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { cn } from '@/utils/utils';
-import { useMultiple } from 'tiny-motion';
+import { useMultiple } from '@cirolee/tiny-motion';
 interface BurgerButtonProps {
   open?: boolean;
   size?: number;

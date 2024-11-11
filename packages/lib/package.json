@@ -26,16 +26,16 @@
     "hooks",
     "Web Animation API",
     "motion",
-    "tiny-motion"
+    "@cirolee/tiny-motion"
   ],
   "author": "CiroLee<https://github.com/CiroLee>",
-  "homepage": "https://tiny-motion.vercel.app",
+  "homepage": "https://@cirolee/tiny-motion.vercel.app",
   "bugs": {
-    "url": "https://github.com/CiroLee/tiny-motion/issues"
+    "url": "https://github.com/CiroLee/@cirolee/tiny-motion/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CiroLee/tiny-motion.git"
+    "url": "https://github.com/CiroLee/@cirolee/tiny-motion.git"
   },
   "license": "MIT",
   "peerDependencies": {

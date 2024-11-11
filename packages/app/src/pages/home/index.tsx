@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useAnimate } from 'tiny-motion';
+import { useAnimate } from '@cirolee/tiny-motion';
 import Button from '@/ui/Button';
 import CopyButton from '@/components/CopyButton';
 export default function Home() {
@@ -24,8 +24,8 @@ export default function Home() {
       </p>
       <div className="relative mt-12 box-border h-[44px] overflow-hidden rounded-[8px] bg-[#636363] p-[2px] shadow-[0_2px_20px_2px] shadow-[rgba(53,23,1,0.3)]">
         <div className="relative z-10 flex size-full items-center rounded-[6px] bg-[#242323] pl-4 pr-[6px] text-white">
-          <span>npm install tiny-motion</span>
-          <CopyButton text="npm install tiny-motion" className="ml-2" />
+          <span>npm install @cirolee/tiny-motion</span>
+          <CopyButton text="npm install @cirolee/tiny-motion" className="ml-2" />
         </div>
         <div
           ref={ref}

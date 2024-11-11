@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { presetMotionNames, type MotionName } from 'tiny-motion';
+import { presetMotionNames, type MotionName } from '@cirolee/tiny-motion';
 import { cn } from '@/utils/utils';
 import { cva } from 'class-variance-authority';
 const prefixes = ['fade', 'slide', 'zoom', 'flip'];

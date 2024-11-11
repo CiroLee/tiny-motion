@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { animate } from 'tiny-motion';
+import { animate } from '@cirolee/tiny-motion';
 import Heading from '@/ui/Heading';
 import Playground from '@/components/Playground';
 import Button from '@/ui/Button';
@@ -8,7 +8,7 @@ import PageNavigate from '@/components/PageNavigate';
 import ApiTable from '@/components/ApiTable';
 import { rows } from './api';
 
-const code = `import { animate } from 'tiny-motion;
+const code = `import { animate } from '@cirolee/tiny-motion;
 
 export default function App() {
  const ref = useRef<HTMLDivElement>(null);

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/utils/utils';
-import { useMotion } from 'tiny-motion';
+import { useMotion } from '@cirolee/tiny-motion';
 interface TooltipProps {
   text?: React.ReactNode;
   gap?: number;

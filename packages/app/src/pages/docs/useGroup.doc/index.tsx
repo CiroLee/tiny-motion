@@ -3,7 +3,7 @@ import PageNavigate from '@/components/PageNavigate';
 import Playground from '@/components/Playground';
 import Button from '@/ui/Button';
 import Heading from '@/ui/Heading';
-import { useGroup, EASING_FUNCTIONS } from 'tiny-motion';
+import { useGroup, EASING_FUNCTIONS } from '@cirolee/tiny-motion';
 import CodeBlock from '@/components/CodeBlock';
 import Tag from '@/ui/Tag';
 import { demoCode, demoCode2, demoCode3, selectorsCode, types } from './codes';

@@ -4,11 +4,11 @@ import CodeBlock from '@/components/CodeBlock';
 import Button from '@/ui/Button';
 import ApiTable from '@/components/ApiTable';
 import { returnRows } from './api';
-import { useAnimate } from 'tiny-motion';
+import { useAnimate } from '@cirolee/tiny-motion';
 import PageNavigate from '@/components/PageNavigate';
 import Playground from '@/components/Playground';
 
-const useAnimateUsageCode = `import { useAnimate } from 'tiny-motion;'
+const useAnimateUsageCode = `import { useAnimate } from '@cirolee/tiny-motion;'
 export default function App() {
   const [ ref, animate ] = useAnimate<HTMLDivElement>();
   return (

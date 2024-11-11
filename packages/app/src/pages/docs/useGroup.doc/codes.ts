@@ -1,4 +1,4 @@
-export const demoCode = `import { useGroup, EASING_FUNCTIONS } from 'tiny-motion';
+export const demoCode = `import { useGroup, EASING_FUNCTIONS } from '@cirolee/tiny-motion';
 
 export default function App() {
   const ballRef1 = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ export default function App() {
   )
 }`;
 
-export const demoCode2 = `import { useGroup, EASING_FUNCTIONS } from 'tiny-motion';
+export const demoCode2 = `import { useGroup, EASING_FUNCTIONS } from '@cirolee/tiny-motion';
 import { useRef } from 'react';
 
 export default function App() {
@@ -107,7 +107,7 @@ export default function App() {
   )
 }`;
 
-export const demoCode3 = `import { useGroup, EASING_FUNCTIONS } from 'tiny-motion';
+export const demoCode3 = `import { useGroup, EASING_FUNCTIONS } from '@cirolee/tiny-motion';
 
 export default function App() {
   const controller = useGroup(
@@ -144,7 +144,7 @@ type SpecialKeyframeAnimationOptions = Omit<KeyframeAnimationOptions, 'delay' | 
 };
 type DelayFunction = <T extends DOMElement>(el: T, index: number, length: number) => number;`;
 
-export const selectorsCode = `import { useGroup, EASING_FUNCTIONS } from 'tiny-motion';
+export const selectorsCode = `import { useGroup, EASING_FUNCTIONS } from '@cirolee/tiny-motion';
 
 export default function App() {
 

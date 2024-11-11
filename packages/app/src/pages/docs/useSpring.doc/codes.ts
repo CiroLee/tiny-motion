@@ -1,4 +1,4 @@
-export const code1 = `import { useSpring } from 'tiny-motion';
+export const code1 = `import { useSpring } from '@cirolee/tiny-motion';
 export default function App() {
   const [y, controller] = useSpring(0, 240, { autoPlay: false });
 

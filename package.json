@@ -1,14 +1,14 @@
 {
-  "name": "tiny-motion",
+  "name": "@cirolee/tiny-motion",
   "description": "The high-performance extension of Web Animation API for React Hooks",
   "browser": "packages/lib/dist/index.js",
   "types": "packages/lib/dist/index.d.ts",
   "type": "module",
   "scripts": {
     "dev:app": "pnpm --filter app run dev",
-    "dev:lib": "pnpm --filter tiny-motion run dev",
+    "dev:lib": "pnpm --filter @cirolee/tiny-motion run dev",
     "build:app": "pnpm --filter app run build",
-    "build:lib": "pnpm --filter tiny-motion run build",
+    "build:lib": "pnpm --filter @cirolee/tiny-motion run build",
     "prepare": "husky",
     "publish": "cd packages/lib && npm run publish"
   },

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useMultiple } from 'tiny-motion';
+import { useMultiple } from '@cirolee/tiny-motion';
 import PageNavigate from '@/components/PageNavigate';
 import Playground from '@/components/Playground';
 import Heading from '@/ui/Heading';

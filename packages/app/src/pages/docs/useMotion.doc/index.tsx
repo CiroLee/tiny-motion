@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CodeBlock from '@/components/CodeBlock';
 import PageNavigate from '@/components/PageNavigate';
 
-const code = `import { useMotion } from 'tiny-motion';
+const code = `import { useMotion } from '@cirolee/tiny-motion';
 
 export default function App() {
   /** 
@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <div>
-      <div ref={ref} className="text-3xl">tiny-motion</div>
+      <div ref={ref} className="text-3xl">@cirolee/tiny-motion</div>
       <button onClick={() => motion('swing')}>play</button>
     </div>
   )

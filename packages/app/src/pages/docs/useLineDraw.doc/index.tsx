@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Playground from '@/components/Playground';
-import { useLineDraw } from 'tiny-motion';
+import { useLineDraw } from '@cirolee/tiny-motion';
 import Button from '@/ui/Button';
 import Heading from '@/ui/Heading';
 import CodeBlock from '@/components/CodeBlock';
