@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="images/@cirolee/tiny-motion-logo.svg" width="256" height="256" alt="logo">
+  <img src="images/tiny-motion-logo.svg" width="256" height="256" alt="logo">
   <h1 style="margin-top:20px">@cirolee/tiny-motion</h1>
 </div>
 
 The high-performance extension of Web Animation API for React Hooks
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/@cirolee/tiny-motion) ![NPM Version](https://img.shields.io/npm/v/@cirolee/tiny-motion) ![GitHub License](https://img.shields.io/github/license/cirolee/@cirolee/tiny-motion)
+![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/%40cirolee%2Ftiny-motion) ![NPM Version](https://img.shields.io/npm/v/@cirolee/tiny-motion) ![NPM License](https://img.shields.io/npm/l/%40cirolee%2Ftiny-motion)
 
 # Install
 
