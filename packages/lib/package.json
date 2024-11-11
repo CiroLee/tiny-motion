@@ -1,5 +1,5 @@
 {
-  "name": "tiny-motion",
+  "name": "@cirolee/tiny-motion",
   "description": "The high-performance extension of Web Animation API for React Hooks",
   "version": "0.1.8",
   "main": "dist/index.js",
@@ -16,7 +16,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
-    "publish": "npm publish"
+    "publish": "npm publish --access=public"
   },
   "files": [
     "dist"
