@@ -39,5 +39,11 @@
     "typescript": "^5.5.3",
     "vite": "^5.3.3",
     "vite-plugin-svg-icons": "^2.0.1"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ]
 }

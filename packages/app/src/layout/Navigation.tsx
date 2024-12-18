@@ -66,8 +66,8 @@ export default function Navigation() {
           ))}
         </div>
         <a
-          href="https://github.com/CiroLee/@cirolee/tiny-motion"
-          title="https://github.com/CiroLee/@cirolee/tiny-motion"
+          href="https://github.com/CiroLee/tiny-motion"
+          title="https://github.com/CiroLee/tiny-motion"
           className="w-full py-3 sm:w-fit sm:p-0"
           target="_blank">
           <IconBrandGithubFilled size={20} className="ml-auto" />
