@@ -9,8 +9,7 @@
     "dev:lib": "pnpm --filter @cirolee/tiny-motion run dev",
     "build:app": "pnpm --filter app run build",
     "build:lib": "pnpm --filter @cirolee/tiny-motion run build",
-    "prepare": "husky",
-    "publish": "npm run publish"
+    "prepare": "husky"
   },
   "workspaces": [
     "packages/*"

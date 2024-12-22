@@ -1,16 +1,15 @@
 {
   "name": "@cirolee/tiny-motion",
   "description": "The high-performance extension of Web Animation API for React Hooks",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
       "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.js"
     }
   },
   "scripts": {
@@ -38,13 +37,13 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "devDependencies": {
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "tsup": "^8.1.0",
+    "@types/react": "^18 || ^19",
+    "@types/react-dom": "^18 || ^19",
+    "tsup": "^8.3.5",
     "typescript": "^5"
   }
 }
