@@ -34,7 +34,7 @@ export function useGroup<T extends DOMElement>(props: useGroupProps<T>, deps: an
     onResume
   } = props;
   const animations = useRef<(Animation | undefined)[]>([]);
-  const targets = useRef<T[]>();
+  const targets = useRef<T[]>(null);
 
   const getTargets = useCallback(() => {
     if (refs) {
@@ -50,10 +50,11 @@ export function useGroup<T extends DOMElement>(props: useGroupProps<T>, deps: an
   }, [refs, selectors]);
 
   useEffect(() => {
-    targets.current = getTargets();
-    if (!targets.current) {
-      throw new Error('useGroup: selectors or refs is required');
+    const newTargets = getTargets();
+    if (!newTargets) {
+      throw new Error('useGroup: selectors or refs must resolve to at least one DOM element');
     }
+    targets.current = newTargets;
     const _keyframes = combineKeyframeByMotion(keyframes, motion);
     animations.current = targets.current!.map((el, index, arr) => {
       const animation = el.animate(_keyframes, combineOptions(options, el, index, arr.length));

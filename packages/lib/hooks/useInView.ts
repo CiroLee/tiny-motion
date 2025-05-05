@@ -36,13 +36,16 @@ function createObserver(target: DOMElement, options: CreateObserverOptions) {
     }
   }, opt);
 
-  target && observer.observe(target);
+  if (target) {
+    observer.observe(target);
+  }
+
   return observer;
 }
 
 export function useInView<T extends DOMElement>(props: UseInViewProps<T>) {
   const { refs, selectors, enter, leave, options } = props;
-  const targets = useRef<T[]>();
+  const targets = useRef<T[]>(null);
   const observers = useRef<IntersectionObserver[]>([]);
   const getTargets = useCallback(() => {
     if (refs) {
@@ -57,10 +60,11 @@ export function useInView<T extends DOMElement>(props: UseInViewProps<T>) {
     }
   }, [refs, selectors]);
   useEffect(() => {
-    targets.current = getTargets();
-    if (!targets.current) {
-      throw new Error('useInView: selectors or refs is required');
+    const newTargets = getTargets();
+    if (!newTargets) {
+      throw new Error('useInView: selectors or refs must resolve to at least one DOM element');
     }
+    targets.current = newTargets;
 
     observers.current = targets.current.map((target) =>
       createObserver(target, {

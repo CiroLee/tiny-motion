@@ -29,10 +29,33 @@ export default function App() {
   )
 }`;
 
+export const delayCode = `import { useValue } from '@cirolee/tiny-motion';
+
+export default function App() {
+  const [value, controller] = useValue(0, 100 {
+    duration: 5000,
+    autoPlay: false,
+    delay: 1000,
+    easing: 'easeOutCubic'
+  });
+
+  return (
+    <div className="flex h-[260px] flex-col items-center">
+      <div className="my-4 flex size-[120px] rounded-xl border bg-white text-3xl font-bold flex-center">{value}</div>
+      <div className="mt-4 space-x-2">
+        <button onClick={() => controller.play()}>
+          play(delay=1000ms)
+        </button>
+      </div>
+    </div>
+  )
+}`;
+
 export const typesCode = `interface ValueOptions {
   duration?: number;
   precision?: number;
   autoPlay?: boolean;
+  delay?: number;
   easing?: EaseAlgorithmTypes;
 }
 // support easing algorithm types

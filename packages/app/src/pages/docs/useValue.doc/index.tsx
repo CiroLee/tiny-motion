@@ -4,7 +4,7 @@ import Heading from '@/ui/Heading';
 import Button from '@/ui/Button';
 import { useValue } from '@cirolee/tiny-motion';
 import CodeBlock from '@/components/CodeBlock';
-import { code, typesCode } from './codes';
+import { code, delayCode, typesCode } from './codes';
 import ApiTable from '@/components/ApiTable';
 import { propsRows } from './api';
 import Tag from '@/ui/Tag';
@@ -14,6 +14,12 @@ export default function UseValueDoc() {
     duration: 5000,
     autoPlay: false,
     easing: 'easeOutCubic'
+  });
+  const [value2, controller2] = useValue(0, 100, {
+    duration: 5000,
+    autoPlay: false,
+    easing: 'easeOutCubic',
+    delay: 1000
   });
   return (
     <div>
@@ -40,6 +46,16 @@ export default function UseValueDoc() {
         </div>
       </Playground>
       <CodeBlock code={code} highlightRange={[[4, 8]]} />
+      <p className="mb-2 mt-6">
+        use <Tag variant="code">delay</Tag> to delay the animation
+      </p>
+      <Playground className="my-4 flex h-[260px] flex-col items-center">
+        <div className="my-4 flex size-[120px] rounded-xl border bg-white text-3xl font-bold flex-center">{value2}</div>
+        <Button size="sm" onClick={() => controller2.play()}>
+          play(delay=1000ms)
+        </Button>
+      </Playground>
+      <CodeBlock code={delayCode} diffAddLines={[7]} highlightRange={[[4, 8]]} />
       <Heading as="h4" className="my-4">
         Signature
       </Heading>

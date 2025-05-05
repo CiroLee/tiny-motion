@@ -46,7 +46,7 @@ export function useLineDraw<T extends SVGGeometryElement>(props: UseLineDrawProp
     onResume
   } = props;
   const animations = useRef<(Animation | undefined)[]>([]);
-  const targets = useRef<T[]>();
+  const targets = useRef<T[]>(null);
 
   const getTargets = useCallback(() => {
     if (refs) {
@@ -62,10 +62,11 @@ export function useLineDraw<T extends SVGGeometryElement>(props: UseLineDrawProp
   }, [refs, selectors]);
 
   useEffect(() => {
-    targets.current = getTargets();
-    if (!targets.current) {
-      throw new Error('useGroup: selectors or refs is required');
+    const newTargets = getTargets();
+    if (!newTargets) {
+      throw new Error('useLineDraw: selectors or refs must resolve to at least one DOM element');
     }
+    targets.current = newTargets;
     animations.current = targets.current!.map((el, index, arr) => {
       const length = el.getTotalLength();
       el.setAttribute('stroke-dasharray', length + ' ' + length);

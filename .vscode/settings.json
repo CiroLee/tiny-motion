@@ -4,10 +4,18 @@
   },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "editor.formatOnSave": true,
-  "cSpell.words": ["tailwindcss", "commitlint", "clsx", "tsup", "tabler", "shiki", "WAAPI", "Numberish", "usehooks"],
+  "cSpell.words": [
+    "tailwindcss",
+    "commitlint",
+    "clsx",
+    "tsup",
+    "tabler",
+    "shiki",
+    "WAAPI",
+    "Numberish",
+    "usehooks",
+    "cirolee"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  "tailwindCSS.classFunctions": ["cva", "cn"]
 }

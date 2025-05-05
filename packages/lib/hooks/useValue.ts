@@ -9,10 +9,11 @@ interface ValueOptions {
   precision?: number;
   autoPlay?: boolean;
   easing?: EaseAlgorithmTypes;
+  delay?: number;
 }
 
 export function useValue(from: number, to: number, options: ValueOptions = {}): [number, ValueController] {
-  const { duration = 1000, precision = 0, autoPlay = true, easing = 'easeOutCubic' } = options;
+  const { duration = 1000, precision = 0, autoPlay = true, easing = 'easeOutCubic', delay = 0 } = options;
 
   if (duration <= 0) {
     throw new Error('useValue: duration must be greater than 0');
@@ -25,6 +26,7 @@ export function useValue(from: number, to: number, options: ValueOptions = {}): 
   const startTimeRef = useRef<number | null>(null);
   const pausedTimeRef = useRef<number>(0);
   const animationFrameId = useRef<number | null>(null);
+  const timeoutId = useRef<number | null>(null);
 
   const roundToPrecision = useCallback(
     (num: number) => {
@@ -57,15 +59,24 @@ export function useValue(from: number, to: number, options: ValueOptions = {}): 
 
   useEffect(() => {
     if (isPlaying && !isPaused) {
-      animationFrameId.current = requestAnimationFrame(animate);
+      if (delay > 0) {
+        timeoutId.current = window.setTimeout(() => {
+          animationFrameId.current = requestAnimationFrame(animate);
+        }, delay);
+      } else {
+        animationFrameId.current = requestAnimationFrame(animate);
+      }
     }
 
     return () => {
       if (animationFrameId.current !== null) {
         cancelAnimationFrame(animationFrameId.current);
       }
+      if (timeoutId.current !== null) {
+        clearTimeout(timeoutId.current);
+      }
     };
-  }, [animate, isPlaying, isPaused]);
+  }, [animate, isPlaying, isPaused, delay]);
 
   const control: ValueController = {
     play: () => {
@@ -79,6 +90,9 @@ export function useValue(from: number, to: number, options: ValueOptions = {}): 
       setIsPaused(false);
       startTimeRef.current = null;
       pausedTimeRef.current = 0;
+      if (timeoutId.current !== null) {
+        clearTimeout(timeoutId.current);
+      }
       setValue(from);
     },
     pause: () => {
@@ -87,6 +101,9 @@ export function useValue(from: number, to: number, options: ValueOptions = {}): 
         pausedTimeRef.current = performance.now() - (startTimeRef.current || 0);
         if (animationFrameId.current !== null) {
           cancelAnimationFrame(animationFrameId.current);
+        }
+        if (timeoutId.current !== null) {
+          clearTimeout(timeoutId.current);
         }
       }
     },

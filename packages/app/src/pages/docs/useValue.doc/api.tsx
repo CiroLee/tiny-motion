@@ -18,6 +18,6 @@ export const propsRows: ApiTableRow[] = [
     desc: 'useValue hook options',
     type: 'tag: ValueOptions',
     required: false,
-    default: '{ duration: 1000, precision: 0, autoPlay: true, easing: "easeOutCubic" }'
+    default: '{ duration: 1000, precision: 0, autoPlay: true,delay: 0, easing: "easeOutCubic" }'
   }
 ];
