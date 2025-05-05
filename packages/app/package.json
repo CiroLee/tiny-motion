@@ -15,8 +15,8 @@
     "@tabler/icons-react": "^3.9.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^18",
+    "react-dom": "^18",
     "react-router-dom": "7.5.3",
     "tailwind-merge": "^2.3.0",
     "usehooks-ts": "^3.1.0"

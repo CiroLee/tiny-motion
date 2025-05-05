@@ -1,18 +1,18 @@
-import { forwardRef } from 'react';
 import { cn } from '@/utils/utils';
-export interface TableBaseType {
+export interface TableBaseType<T> {
   className?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
+  ref?: React.Ref<T>;
   [key: string]: unknown;
 }
 
-export interface TableProps extends TableBaseType {
+export interface TableProps extends TableBaseType<HTMLTableElement> {
   border?: boolean;
   headerFixed?: boolean;
 }
 
-const Table = forwardRef<HTMLTableElement, TableProps>(({ className, style, headerFixed, border, children }, ref) => {
+const Table = ({ className, style, headerFixed, border, children, ref }: TableProps) => {
   return (
     <div
       className={cn(
@@ -29,31 +29,25 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, style, head
       </table>
     </div>
   );
-});
+};
 
-Table.displayName = 'Table';
-
-const TableHeader = forwardRef<HTMLTableSectionElement, TableBaseType>(({ className, children }, ref) => {
+const TableHeader = ({ className, children, ref }: TableBaseType<HTMLTableSectionElement>) => {
   return (
     <thead ref={ref} className={cn('w-full border-b-[1px] border-gray-200/80 bg-gray-100 text-sm', className)}>
       <TableRow>{children}</TableRow>
     </thead>
   );
-});
+};
 
-TableHeader.displayName = 'TableHeader';
-
-const TableBody = forwardRef<HTMLTableSectionElement, TableBaseType>(({ className, children }, ref) => {
+const TableBody = ({ className, children, ref }: TableBaseType<HTMLTableSectionElement>) => {
   return (
     <tbody ref={ref} className={cn(className)}>
       {children}
     </tbody>
   );
-});
+};
 
-TableBody.displayName = 'TableBody';
-
-const TableHeaderCell = forwardRef<HTMLTableCellElement, TableBaseType>(({ className, children, ...rest }, ref) => {
+const TableHeaderCell = ({ className, children, ref, ...rest }: TableBaseType<HTMLTableCellElement>) => {
   return (
     <th
       ref={ref}
@@ -65,28 +59,22 @@ const TableHeaderCell = forwardRef<HTMLTableCellElement, TableBaseType>(({ class
       {children}
     </th>
   );
-});
+};
 
-TableHeaderCell.displayName = 'TableHeaderCell';
-
-const TableRow = forwardRef<HTMLTableRowElement, TableBaseType>(({ className, children }, ref) => {
+const TableRow = ({ className, children, ref }: TableBaseType<HTMLTableRowElement>) => {
   return (
     <tr ref={ref} className={cn('border-b-[1px] border-gray-200/80 transition-colors hover:bg-gray-200/30', className)}>
       {children}
     </tr>
   );
-});
+};
 
-TableRow.displayName = 'TableRow';
-
-const TableDataCell = forwardRef<HTMLTableCellElement, TableBaseType>(({ className, children }, ref) => {
+const TableDataCell = ({ className, children, ref }: TableBaseType<HTMLTableCellElement>) => {
   return (
     <td ref={ref} className={cn('p-[14px] text-[14px]', className)}>
       {children}
     </td>
   );
-});
-
-TableDataCell.displayName = 'TableDataCell';
+};
 
 export { Table, TableHeader, TableHeaderCell, TableBody, TableRow, TableDataCell };

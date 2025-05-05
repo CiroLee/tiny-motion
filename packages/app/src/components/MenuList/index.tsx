@@ -23,8 +23,6 @@ export default function MenuList() {
   const hookList = docsChildren.filter((item) => item.meta?.type === 'hook');
   const universalList = docsChildren.filter((item) => item.meta?.type === 'universal');
 
-  console.log(universalList);
-
   useOnClickOutside(ref, () => {
     setHidden(true);
   });
