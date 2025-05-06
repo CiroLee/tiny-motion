@@ -2,6 +2,7 @@ import logoSvg from '@/assets/logo.svg';
 import ThemeSwitch from './ThemeSwitch';
 import Button from '@/ui/Button';
 import { Link } from 'react-router-dom';
+import { IconExternalLink } from '@tabler/icons-react';
 export default function Header() {
   return (
     <header className="bg-background/80 backdrop-blue-sm border-line fixed top-0 left-0 z-(--header) flex h-(--header-height) w-full items-center justify-between border-b px-4 backdrop-saturate-200">
@@ -10,11 +11,17 @@ export default function Header() {
         <span className="font-semibold">tiny-motion</span>
       </Link>
       <div className="flex items-center gap-2">
-        <Button colors="neutral" variant="light" size="sm">
+        <Button colors="neutral" variant="light" size="sm" asChild>
           <Link to="/docs">documents</Link>
         </Button>
-        <Button colors="neutral" variant="light" size="sm">
+        <Button colors="neutral" variant="light" size="sm" asChild>
           <Link to="/presets">presets</Link>
+        </Button>
+        <Button colors="neutral" asChild className="gap-1" variant="light" size="sm">
+          <a href="https://github.com/CiroLee/tiny-motion" target="_blank" rel="noopener noreferrer">
+            <span>Github</span>
+            <IconExternalLink size={18} />
+          </a>
         </Button>
         <ThemeSwitch />
       </div>
