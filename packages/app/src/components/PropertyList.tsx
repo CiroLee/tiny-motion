@@ -74,7 +74,7 @@ export default function PropertyList({ onSetEasing, onSetDuration, onSetDelay, o
     onSetDirection(direction);
   };
   return (
-    <div className="w-sidebar bg-background relative ml-auto box-border flex h-full flex-col overflow-hidden py-3 shadow-[-2px_0_16px_4px] shadow-black/5">
+    <div className="bg-background relative ml-auto box-border flex h-full w-75 flex-col overflow-hidden py-3 shadow-[-2px_0_16px_4px] shadow-black/5">
       <div className="mb-2 flex justify-between px-3">
         <div className="flex items-center">
           <span>Easing</span>
