@@ -23,12 +23,7 @@ export function checkDuration(options?: AnimationOptions | SpecialAnimationOptio
   if (typeof options === 'number' && options <= 0) {
     throw new Error('options is a number and must be greater than 0');
   } else if (typeof options === 'object') {
-    if (
-      [
-        typeof options.duration === 'number' && options.duration <= 0,
-        options.duration instanceof CSSNumericValue && isCSSNumericValueLessThanZero(options.duration)
-      ].some(Boolean)
-    ) {
+    if ([typeof options.duration === 'number' && options.duration <= 0, options.duration instanceof CSSNumericValue && isCSSNumericValueLessThanZero(options.duration)].some(Boolean)) {
       throw new Error('options.duration must be greater than 0');
     }
   }
@@ -61,12 +56,7 @@ export function combine(...args: any[]): any {
   }
 }
 
-export function combineOptions<T extends DOMElement>(
-  options: SpecialAnimationOptions,
-  el: T,
-  index: number,
-  length: number
-) {
+export function combineOptions<T extends DOMElement>(options: SpecialAnimationOptions, el: T, index: number, length: number) {
   checkDuration(options);
   if (typeof options === 'number') {
     return options;

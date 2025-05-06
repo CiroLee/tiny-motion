@@ -34,30 +34,27 @@ export default function App() {
 }`;
 export default function AnimateDoc() {
   const ref = useRef<HTMLDivElement>(null);
+  const handleClick = () => {
+    if (ref.current) {
+      animate({
+        target: ref.current,
+        motion: 'flipX',
+        options: {
+          duration: 500,
+          fill: 'forwards'
+        }
+      });
+    }
+  };
   return (
     <>
       <Heading as="h2" className="mb-4">
         animate
       </Heading>
-      <p className="mb-4 text-zinc-400">
-        animate is universal method for animating elements. It can also use preset motions
-      </p>
-      <Playground className="relative mb-3 flex h-[240px] overflow-hidden rounded-md border flex-center bg-polka">
+      <p className="text-description mb-4">animate is universal method for animating elements. It can also use preset motions</p>
+      <Playground className="relative mb-3 flex h-60 items-center justify-center overflow-hidden rounded-md">
         <div ref={ref} className="size-[120px] rounded-lg bg-blue-500"></div>
-        <Button
-          size="sm"
-          className="absolute bottom-3 right-3"
-          onClick={() => {
-            ref.current &&
-              animate({
-                target: ref.current,
-                motion: 'flipX',
-                options: {
-                  duration: 500,
-                  fill: 'forwards'
-                }
-              });
-          }}>
+        <Button size="sm" className="absolute right-3 bottom-3" onClick={handleClick}>
           play
         </Button>
       </Playground>

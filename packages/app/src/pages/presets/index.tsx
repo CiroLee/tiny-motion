@@ -24,7 +24,7 @@ export default function Presets() {
   const [iterations, setIterations] = useState(1);
   const [direction, setDirection] = useState<PlaybackDirection>('normal');
   const btnBoxRef = useRef<HTMLDivElement>(null);
-  const animation = useRef<Animation>();
+  const animation = useRef<Animation>(null);
 
   const handlePlay = () => {
     animation.current = motion(motionName, {
@@ -55,31 +55,31 @@ export default function Presets() {
   }, [motionName, easingObj, iterations, direction, fill, duration, delay]);
 
   return (
-    <div className="relative flex h-full overflow-hidden bg-polka">
+    <div className="polka relative flex h-full overflow-hidden">
       <MotionList onClick={setMotionName} />
       <div className="flex flex-1 items-center justify-center overflow-hidden">
         <div ref={ref}>
-          {target === 'text' && <span className="text-6xl font-bold">@cirolee/tiny-motion</span>}
-          {target === 'cube' && <div className="size-[200px] rounded-xl bg-brand"></div>}
-          {target === 'image' && <img src={img} className="aspect-[3/2] w-[340px] rounded-md" />}
+          {target === 'text' && <span className="text-6xl font-bold">tiny-motion</span>}
+          {target === 'cube' && <div className="bg-secondary size-50 rounded-xl"></div>}
+          {target === 'image' && <img src={img} className="aspect-[3/2] w-85 rounded-md" />}
         </div>
         <div ref={btnBoxRef} className="absolute bottom-8 flex gap-2 px-3">
-          <div className="mr-4 flex gap-1">
-            <Button size="lg" onClick={() => setTarget('text')}>
+          <div className="mr-4 flex gap-2">
+            <Button size="lg" colors="secondary" onClick={() => setTarget('text')}>
               <IconH1 />
             </Button>
-            <Button size="lg" onClick={() => setTarget('cube')}>
+            <Button size="lg" colors="secondary" onClick={() => setTarget('cube')}>
               <IconSquareFilled />
             </Button>
-            <Button size="lg" onClick={() => setTarget('image')}>
+            <Button size="lg" colors="secondary" onClick={() => setTarget('image')}>
               <IconPhotoFilled />
             </Button>
           </div>
-          <div className="flex gap-1">
-            <Button size="lg" className="w-[120px]" onClick={handlePlay}>
+          <div className="flex gap-2">
+            <Button size="lg" colors="secondary" className="w-[120px]" onClick={handlePlay}>
               play
             </Button>
-            <Button size="lg" onClick={() => setShowCode(true)}>
+            <Button size="lg" colors="secondary" onClick={() => setShowCode(true)}>
               <IconCode />
             </Button>
           </div>
@@ -102,7 +102,7 @@ export default function Presets() {
         onSetFill={setFill}
         onSetIterations={setIterations}
       />
-      <div className="absolute flex h-full w-full flex-col bg-brand-50 flex-center lg:hidden">
+      <div className="bg-background absolute flex h-full w-full flex-col items-center justify-center lg:hidden">
         <span>preset playground is unavailable under 1024 screen</span>
         <div>
           you can change screen size or visit{' '}

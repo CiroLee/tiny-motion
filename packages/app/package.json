@@ -4,45 +4,33 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@cirolee/tiny-motion": "workspace:*",
-    "@radix-ui/react-slider": "^1.2.0",
-    "@tabler/icons-react": "^3.9.0",
-    "class-variance-authority": "^0.7.0",
+    "@radix-ui/react-slot": "^1.2.0",
+    "@tabler/icons-react": "^3.31.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-router-dom": "7.5.3",
-    "tailwind-merge": "^2.3.0",
-    "usehooks-ts": "^3.1.0"
+    "radix-ui": "^1.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.3",
+    "shiki": "^3.3.0",
+    "tailwind-merge": "^3.2.0",
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.15.0",
-    "@vitejs/plugin-react-swc": "^3.7.0",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "postcss": "^8.4.39",
-    "shiki": "^1.10.1",
-    "tailwindcss": "3.4.4",
-    "tailwindcss-extra": "^1.0.1",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.3",
-    "vite-plugin-svg-icons": "^2.0.1"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "> 1%",
-    "iOS 7",
-    "last 3 iOS versions"
-  ]
+    "@tailwindcss/vite": "^4.1.5",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.5",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
 }

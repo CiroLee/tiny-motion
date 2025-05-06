@@ -1,0 +1,63 @@
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* basic semantic colors base on tailwindcss colors */
+:root {
+  --background: #fff;
+  --foreground: oklch(0.269 0 0);
+  --line: oklch(0.922 0 0);
+  --description: oklch(70.8% 0 0);
+  /* semantic z-index */
+  --loading: 60;
+  --popup: 50;
+  --tooltip: 40;
+  --header: 30;
+}
+
+[data-theme='dark'] {
+  --background: oklch(0.269 0 0);
+  --foreground: #fafafa;
+  --line: oklch(0.371 0 0);
+  --description: oklch(55.6% 0 0);
+}
+
+@theme {
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-line: var(--line);
+  --color-description: var(--description);
+
+  --color-primary: var(--color-blue-500);
+  --color-primary-active: var(--color-blue-600);
+  --color-danger: var(--color-red-500);
+  --color-danger-active: var(--color-red-600);
+  --color-secondary: var(--color-indigo-500);
+  --color-secondary-active: var(--color-indigo-600);
+  --color-warning: var(--color-orange-500);
+  --color-warning-active: var(--color-orange-600);
+}
+
+@utility streamer {
+  background-image: radial-gradient(50% 50% at 50% 50%, #f6b065 0%, #f1a554 31%, #b97731 63%, #985b1b 100%);
+}
+
+@utility offset-rect {
+  offset-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+@utility polka {
+  background-color: transparent;
+  background-image: radial-gradient(#383838 0.7px, transparent 0.7px), radial-gradient(#383838 0.7px, #f9fefe 0.7px);
+  background-size: 28px 28px;
+  background-position:
+    0 0,
+    14px 14px;
+
+  @variant dark {
+    background-image: radial-gradient(#4e4e4e 0.7px, transparent 0.7px), radial-gradient(#555454 0.7px, #2b2c2c 0.7px);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+}

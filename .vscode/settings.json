@@ -4,18 +4,7 @@
   },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "editor.formatOnSave": true,
-  "cSpell.words": [
-    "tailwindcss",
-    "commitlint",
-    "clsx",
-    "tsup",
-    "tabler",
-    "shiki",
-    "WAAPI",
-    "Numberish",
-    "usehooks",
-    "cirolee"
-  ],
+  "cSpell.words": ["tailwindcss", "commitlint", "clsx", "tsup", "tabler", "shiki", "WAAPI", "Numberish", "usehooks", "cirolee", "hoverable"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "tailwindCSS.classFunctions": ["cva", "cn"]
 }

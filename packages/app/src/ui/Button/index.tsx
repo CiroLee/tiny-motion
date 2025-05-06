@@ -1,46 +1,64 @@
-import { forwardRef } from 'react';
-import { cn } from '@/utils/utils';
-import { cva } from 'class-variance-authority';
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  block?: boolean;
-  disabled?: boolean;
-  size?: 'default' | 'sm' | 'lg';
-  children?: React.ReactNode;
-}
+'use client';
+import { Slot } from '@radix-ui/react-slot';
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { colors, colorsBorderedVariants, colorsLightVariants } from './buttonVariants';
 
-const button = cva(
-  'inline-flex flex-center  bg-brand text-white transition rounded [&:not(:disabled)]:hover:opacity-90 active:bg-brand-600',
-  {
-    variants: {
-      block: {
-        true: 'w-full px-0 flex'
-      },
-      size: {
-        default: 'px-3 h-9',
-        sm: 'px-2 h-7 text-sm rounded-[3px]',
-        lg: 'px-4 h-12 text-lg rounded'
-      },
-      disabled: {
-        true: 'opacity-80 cursor-not-allowed'
-      }
+const button = cva(`inline-flex items-center justify-center transition not-disabled:hover:opacity-80 box-border outline-none focus-visible:ring-3 focus-visible:transition-none`, {
+  variants: {
+    colors,
+    size: {
+      xs: 'px-2 rounded-sm h-6 text-xs',
+      sm: 'px-3 rounded h-8 text-sm',
+      md: 'px-4 rounded-md h-10',
+      lg: 'px-5 rounded-lg h-12'
     },
 
-    defaultVariants: {
-      block: false,
-      size: 'default'
+    variant: {
+      solid: 'text-white',
+      light: 'text-foreground bg-transparent dark:bg-transparent',
+      bordered: 'border bg-transparent dark:bg-transparent'
+    },
+    icon: {
+      true: 'aspect-square p-0'
+    },
+    disabled: {
+      true: 'cursor-not-allowed opacity-50'
+    },
+    loading: {
+      true: 'cursor-not-default opacity-50'
+    },
+    pill: {
+      true: 'rounded-full'
     }
+  },
+  compoundVariants: [
+    ...colorsBorderedVariants,
+    ...colorsLightVariants,
+    {
+      variant: 'solid',
+      colors: 'neutral',
+      className: 'text-foreground'
+    }
+  ],
+  defaultVariants: {
+    size: 'md',
+    colors: 'primary',
+    variant: 'solid'
   }
-);
-
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { className, size, children, block, disabled, ...rest } = props;
-  return (
-    <button ref={ref} disabled={disabled} className={cn(button({ size, disabled, block, className }))} {...rest}>
-      {children}
-    </button>
-  );
 });
 
-Button.displayName = 'Button';
-export default Button;
+type ButtonVariants = VariantProps<typeof button>;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, Omit<ButtonVariants, 'disabled'> {
+  asChild?: boolean;
+  ref?: React.Ref<HTMLButtonElement>;
+}
+export default function Button(props: ButtonProps) {
+  const { colors, size, icon, variant, disabled, loading, pill, className, asChild, children, ref, ...rest } = props;
+  const Component = asChild ? Slot : 'button';
+  return (
+    <Component ref={ref} disabled={disabled || !!loading} className={cn(button({ colors, size, icon, variant, disabled, loading, pill, className }))} {...rest}>
+      {children}
+    </Component>
+  );
+}

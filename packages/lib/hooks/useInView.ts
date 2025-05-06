@@ -6,7 +6,7 @@ interface InViewOptions extends IntersectionObserverInit {
 }
 interface UseInViewProps<T> {
   selectors?: string[];
-  refs?: React.RefObject<T>[];
+  refs?: React.RefObject<T | null>[];
   enter?: MotionCallback;
   leave?: MotionCallback;
   options?: InViewOptions;

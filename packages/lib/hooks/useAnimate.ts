@@ -5,10 +5,10 @@ export function useAnimate<T extends DOMElement>(): [React.RefObject<T>, Animati
   const ref = useRef<T>(null);
 
   function animate(keyframes: Keyframes, options?: AnimationOptions): Animation {
-    checkRef(ref);
+    checkRef(ref as React.RefObject<DOMElement>);
     checkDuration(options);
     return ref.current!.animate(keyframes, options);
   }
 
-  return [ref, animate];
+  return [ref as React.RefObject<T>, animate];
 }

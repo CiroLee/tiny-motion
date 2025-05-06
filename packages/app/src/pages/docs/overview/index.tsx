@@ -8,10 +8,7 @@ export default function Overview() {
       <Heading as="h2" className="mb-4">
         Overview
       </Heading>
-      <p>
-        @cirolee/tiny-motion is a high-performance extension of Web Animation API(WAAPI) for react hooks. It's easy to
-        get started. More controls over animations.
-      </p>
+      <p className="text-description">tiny-motion is a high-performance extension of Web Animation API(WAAPI) for react hooks. It's easy to get started. More controls over animations.</p>
       <Heading as="h4" className="my-4">
         Install
       </Heading>

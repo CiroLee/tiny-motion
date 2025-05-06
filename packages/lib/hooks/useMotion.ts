@@ -158,8 +158,7 @@ class MotionPreset {
 }
 
 type MethodNames<T> = {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  [K in keyof T as T[K] extends Function ? K : never]: T[K];
+  [K in keyof T as T[K] extends (...args: any[]) => any ? K : never]: T[K];
 };
 
 export type MotionName = keyof MethodNames<MotionPreset>;
@@ -172,16 +171,13 @@ export const presetMotionNames = allMethodNames.filter((key) => {
 
 // hooks
 const animationPreset = new MotionPreset();
-export function useMotion<T extends DOMElement>(): [
-  React.RefObject<T>,
-  (name: MotionName, options?: AnimationOptions) => Animation
-] {
+export function useMotion<T extends DOMElement>(): [React.RefObject<T>, (name: MotionName, options?: AnimationOptions) => Animation] {
   const ref = useRef<T>(null);
 
   function motion(name: MotionName, options?: AnimationOptions): Animation {
-    checkRef(ref);
-    return animationPreset[name](ref, options);
+    checkRef(ref as React.RefObject<DOMElement>);
+    return animationPreset[name](ref as React.RefObject<DOMElement>, options);
   }
 
-  return [ref, motion];
+  return [ref as React.RefObject<T>, motion];
 }

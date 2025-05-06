@@ -13,6 +13,8 @@ export default [
     rules: {
       'react/react-in-jsx-scope': 0,
       '@typescript-eslint/no-explicit-any': 0,
+      'react/no-unescaped-entities': 0,
+      '@typescript-eslint/no-unused-expressions': 0
     },
     ignores: ['/node_modules', 'dist'],
     settings: {

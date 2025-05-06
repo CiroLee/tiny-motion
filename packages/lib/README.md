@@ -222,7 +222,7 @@ export default function App() {
     []
   );
   return (
-    <div className="mb-4 flex flex-col px-8 flex-center">
+    <div className="mb-4 flex flex-col px-8 justify-center items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="100"
@@ -260,7 +260,7 @@ export default function App() {
 
   return (
     <div className="flex h-[260px] flex-col items-center">
-      <div className="my-4 flex size-[120px] rounded-xl border bg-white text-3xl font-bold flex-center">{value}</div>
+      <div className="my-4 flex size-[120px] rounded-xl border bg-white text-3xl font-bold justify-center items-center">{value}</div>
       <p>isPlaying: {controller.isPlaying.toString()}</p>
       <div className="mt-4 space-x-2">
         <button onClick={() => controller.play()}>

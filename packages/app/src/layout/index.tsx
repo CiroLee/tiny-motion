@@ -1,13 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import Navigation from './Navigation';
-import Loading from '@/ui/Loading';
+import Header from '@/components/Header';
+
 export default function Layout() {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main className="h-[calc(100vh_-_var(--nav-height))]">
-        <Suspense fallback={<Loading show />}>{<Outlet />}</Suspense>
+    <div className="relative">
+      <Header />
+      <main className="relative mt-(--header-height) h-[calc(100vh_-_var(--header-height))]">
+        <Suspense>{<Outlet />}</Suspense>
       </main>
     </div>
   );
