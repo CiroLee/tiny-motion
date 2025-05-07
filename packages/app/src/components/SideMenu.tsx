@@ -50,7 +50,7 @@ export default function SideMenu() {
           {menu.meta?.level !== 'basic' ? <Tag className="ml-1">{menu.meta?.level}</Tag> : null}
         </NavLink>
       ))}
-      <div className={cn('absolute -right-11 bottom-3 flex size-9 cursor-pointer items-center justify-center rounded-md bg-zinc-200 sm:hidden dark:bg-zinc-700')} onClick={() => setHidden(!hidden)}>
+      <div className={cn('absolute -right-11 bottom-4 flex size-9 cursor-pointer items-center justify-center rounded-md bg-zinc-200 sm:hidden dark:bg-zinc-700')} onClick={() => setHidden(!hidden)}>
         <IconLayoutSidebarFilled size={28} />
       </div>
     </div>

@@ -1,6 +1,6 @@
 <div align="center">
   <img src="images/tiny-motion-logo.svg" width="256" height="256" alt="logo">
-  <h1 style="margin-top:20px">@cirolee/tiny-motion</h1>
+  <h1 style="margin-top:20px">tiny-motion</h1>
 </div>
 
 The high-performance extension of Web Animation API for React Hooks
