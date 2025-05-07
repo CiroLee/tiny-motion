@@ -97,7 +97,7 @@ export default function PropertyList({ onSetEasing, onSetDuration, onSetDelay, o
                 handleOnSetEasing(key, value as EaseFunctionType);
               }}>
               {value.includes('linear(') ? <div className="absolute top-2 right-2 size-[8px] rounded-full bg-orange-300"></div> : null}
-              <EaseIcon className="size-[36px] text-gray-400" name={key as EaseFunctionType} key={key} />
+              <EaseIcon name={key as EaseFunctionType} key={key} />
               <span className="mt-2 text-[12px]">{key}</span>
             </div>
           ))}

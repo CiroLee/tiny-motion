@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import type { EaseFunctionType } from '@cirolee/tiny-motion';
 import { useEffect, useState } from 'react';
 interface SvgIconProps {
@@ -7,7 +8,7 @@ interface SvgIconProps {
   style?: React.CSSProperties;
 }
 
-export default function EaseIcon({ name, ...rest }: SvgIconProps) {
+export default function EaseIcon({ name, className, ...props }: SvgIconProps) {
   const [svg, setSvg] = useState<string>();
   const getPath = async (name: string) => {
     const { default: svg } = await import(`@/assets/icons/${name}.svg?raw`);
@@ -17,13 +18,6 @@ export default function EaseIcon({ name, ...rest }: SvgIconProps) {
   useEffect(() => {
     getPath(name);
   }, [name]);
-  if (name === 'easeOutBack') {
-    return (
-      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-        <path d="M14 89.2796C26.8967 24.7962 37.36 -3.67378 87 16.2796" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
-      </svg>
-    );
-  } else {
-    return <i className="[&_svg]:size-8" dangerouslySetInnerHTML={{ __html: svg ?? '' }}></i>;
-  }
+
+  return <i className={cn('[&_svg]:size-8', className)} {...props} dangerouslySetInnerHTML={{ __html: svg ?? '' }}></i>;
 }
