@@ -39,7 +39,6 @@ export const router = createBrowserRouter([
             meta: {
               name: 'overview',
               visible: true,
-              level: 'basic',
               type: 'hook'
             }
           },
@@ -49,7 +48,6 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('@/pages/docs/use-animate.doc')),
             meta: {
               name: 'useAnimate',
-              level: 'basic',
               type: 'hook'
             }
           },
@@ -59,7 +57,6 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-motion.doc')),
             meta: {
               name: 'useMotion',
-              level: 'basic',
               type: 'hook'
             }
           },
@@ -69,7 +66,6 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-group.doc')),
             meta: {
               name: 'useGroup',
-              level: 'basic',
               type: 'hook'
             }
           },
@@ -79,7 +75,6 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-multiple.doc')),
             meta: {
               name: 'useMultiple',
-              level: 'basic',
               type: 'hook'
             }
           },
@@ -89,7 +84,6 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-in-view.doc')),
             meta: {
               name: 'useInView',
-              level: 'basic',
               type: 'hook'
             }
           },
@@ -99,7 +93,6 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-line-draw.doc')),
             meta: {
               name: 'useLineDraw',
-              level: 'basic',
               type: 'hook'
             }
           },
@@ -109,7 +102,7 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-value.doc')),
             meta: {
               name: 'useValue',
-              level: 'Advanced',
+              level: 'no-waapi',
               type: 'hook'
             }
           },
@@ -119,7 +112,7 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-spring.doc')),
             meta: {
               name: 'useSpring',
-              level: 'Advanced',
+              level: 'no-waapi',
               type: 'hook'
             }
           },
@@ -129,7 +122,6 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/animate.doc')),
             meta: {
               name: 'animate',
-              level: 'basic',
               type: 'universal'
             }
           }

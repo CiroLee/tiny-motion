@@ -36,7 +36,7 @@ export default function SideMenu() {
       {hookList.map((menu) => (
         <NavLink to={menu.path || ''} key={menu.id} className={({ isActive }) => cn(menuItem({ active: isActive }))} onClick={() => setHidden(true)}>
           {menu.meta?.name}
-          {menu.meta?.level !== 'basic' ? (
+          {menu.meta?.level ? (
             <Tag colors="secondary" className="ml-1">
               {menu.meta?.level}
             </Tag>
@@ -47,7 +47,11 @@ export default function SideMenu() {
       {universalList.map((menu) => (
         <NavLink to={menu.path || ''} key={menu.id} className={({ isActive }) => cn(menuItem({ active: isActive }))} onClick={() => setHidden(true)}>
           {menu.meta?.name}
-          {menu.meta?.level !== 'basic' ? <Tag className="ml-1">{menu.meta?.level}</Tag> : null}
+          {menu.meta?.level ? (
+            <Tag colors="secondary" className="ml-1">
+              {menu.meta?.level}
+            </Tag>
+          ) : null}
         </NavLink>
       ))}
       <div className={cn('absolute -right-11 bottom-4 flex size-9 cursor-pointer items-center justify-center rounded-md bg-zinc-200 sm:hidden dark:bg-zinc-700')} onClick={() => setHidden(!hidden)}>

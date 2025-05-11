@@ -25,7 +25,7 @@ export default function CodeBlock(props: CodeBlockProps) {
     }
   };
   return (
-    <div className={cn('relative max-h-55 w-full overflow-hidden rounded-md', { 'max-h-[unset]': expanded }, className)}>
+    <div className={cn('border-line relative max-h-55 w-full overflow-hidden rounded-md border', { 'max-h-[unset]': expanded }, className)}>
       <Code
         ref={ref}
         code={code}
