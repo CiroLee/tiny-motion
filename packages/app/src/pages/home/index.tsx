@@ -19,7 +19,9 @@ export default function Home() {
   }, []);
   return (
     <div className="flex h-full flex-col items-center justify-center">
-      <Heading as="h1">tiny-motion</Heading>
+      <Heading as="h1" className="text-5xl md:text-6xl">
+        tiny-motion
+      </Heading>
       <p className="mt-4 px-4 text-center sm:px-0">The high-performance extension of Web Animation API for React Hooks</p>
       <div className="relative mt-12 box-border h-11 overflow-hidden rounded-lg bg-neutral-700 p-0.5 shadow-[0_2px_20px_2px] shadow-[rgba(53,23,1,0.3)]">
         <div className="relative z-10 flex size-full items-center rounded-md bg-neutral-800 pr-1.5 pl-4 text-white">

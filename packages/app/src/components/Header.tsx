@@ -1,15 +1,15 @@
-import logoSvg from '@/assets/logo.svg';
 import ThemeSwitch from './ThemeSwitch';
 import Button from '@/ui/Button';
 import { Link } from 'react-router-dom';
 import { useMobile } from '@/hooks';
+import SvgIcon from './SvgIcon';
 import { IconExternalLink, IconBackground, IconFile, IconBrandGithub } from '@tabler/icons-react';
 export default function Header() {
   const isMobile = useMobile();
   return (
     <header className="bg-background/80 backdrop-blue-sm border-line fixed top-0 left-0 z-(--header) flex h-(--header-height) w-full items-center justify-between border-b px-4 backdrop-saturate-200">
       <Link to="/" className="flex items-center gap-1">
-        <img src={logoSvg} className="size-8" alt="logo" />
+        <SvgIcon filePath="../assets/logo.svg" className="[&_svg]:size-10 [&_svg_path]:nth-[5]:fill-black dark:[&_svg_path]:nth-[5]:fill-white" />
         <span className="font-semibold">tiny-motion</span>
       </Link>
       <div className="flex items-center gap-2">

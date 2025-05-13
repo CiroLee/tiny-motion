@@ -1,23 +1,13 @@
 import { cn } from '@/lib/utils';
 import type { EaseFunctionType } from '@cirolee/tiny-motion';
-import { useEffect, useState } from 'react';
-interface SvgIconProps {
+import SvgIcon from './SvgIcon';
+interface EaseIconProps {
   name: EaseFunctionType;
   fill?: string;
   className?: string;
   style?: React.CSSProperties;
 }
 
-export default function EaseIcon({ name, className, ...props }: SvgIconProps) {
-  const [svg, setSvg] = useState<string>();
-  const getPath = async (name: string) => {
-    const { default: svg } = await import(`@/assets/icons/${name}.svg?raw`);
-    setSvg(svg);
-  };
-
-  useEffect(() => {
-    getPath(name);
-  }, [name]);
-
-  return <i className={cn('[&_svg]:size-8', className)} {...props} dangerouslySetInnerHTML={{ __html: svg ?? '' }}></i>;
+export default function EaseIcon({ name, className, ...props }: EaseIconProps) {
+  return <SvgIcon className={cn('[&_svg]:size-8', className)} filePath={`../assets/icons/${name}.svg`} {...props} />;
 }
