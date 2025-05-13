@@ -117,7 +117,7 @@ export default function UseGroupDoc() {
           </Button>
         </div>
       </Playground>
-      <CodeBlock code={demoCode} highlightLines={[1]} highlightRange={[[8, 21]]} className="my-4" />
+      <CodeBlock code={demoCode} highlightLines={[1]} highlightRange={[[8, 33]]} className="my-4" />
       <Heading as="h4" className="mb-2">
         delay
       </Heading>

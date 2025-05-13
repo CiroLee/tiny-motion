@@ -73,7 +73,7 @@ export default function UseAnimateDoc() {
           play
         </Button>
       </Playground>
-      <CodeBlock code={useAnimateUsageCode} highlightLines={[3]} highlightRange={[[10, 20]]} />
+      <CodeBlock code={useAnimateUsageCode} highlightLines={[1, 3]} highlightRange={[[10, 21]]} />
       <Heading as="h4" className="my-4">
         Signature
       </Heading>

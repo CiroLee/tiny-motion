@@ -111,7 +111,7 @@ export default function UseMultipleDoc() {
           play
         </Button>
       </Playground>
-      <CodeBlock code={code2} highlightLines={[11, 17, 18]} />
+      <CodeBlock code={code2} highlightLines={[11, 17, 18, 19]} />
       <Heading as="h4" className="my-4">
         Signature
       </Heading>
