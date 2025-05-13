@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
 
 interface SvgIconProps {
-  filePath: string;
+  name: string;
   className?: string;
   style?: React.CSSProperties;
 }
-export default function SvgIcon({ filePath, ...props }: SvgIconProps) {
+export default function SvgIcon({ name, ...props }: SvgIconProps) {
   const [svg, setSvg] = useState<string>('');
-  const getPath = async (filePath: string) => {
-    const { default: svg } = await import(`${filePath}?raw`);
+  const getPath = async (name: string) => {
+    const { default: svg } = await import(`@/assets/icons/${name}.svg?raw`);
     setSvg(svg);
   };
 
   useEffect(() => {
-    getPath(filePath);
-  }, [filePath]);
+    getPath(name);
+  }, [name]);
 
   return <i dangerouslySetInnerHTML={{ __html: svg }} {...props} />;
 }

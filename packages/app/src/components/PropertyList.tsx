@@ -2,10 +2,10 @@ import { cn } from '@/lib/utils';
 import { IconAlertCircleFilled } from '@tabler/icons-react';
 import { EASING_FUNCTIONS, type EaseFunctionType } from '@cirolee/tiny-motion';
 import { useRef, useState } from 'react';
-import EaseIcon from './EaseIcon';
 import { cva } from 'class-variance-authority';
 import Tag from '@/ui/Tag';
 import HoverCard from '@/ui/HoverCard';
+import SvgIcon from './SvgIcon';
 
 const item = cva('relative cursor-pointer rounded-sm border border-line px-2 py-3 transition hover:bg-primary/10 hover:border-primary/15', {
   variants: {
@@ -97,7 +97,7 @@ export default function PropertyList({ onSetEasing, onSetDuration, onSetDelay, o
                 handleOnSetEasing(key, value as EaseFunctionType);
               }}>
               {value.includes('linear(') ? <div className="absolute top-2 right-2 size-[8px] rounded-full bg-orange-300"></div> : null}
-              <EaseIcon name={key as EaseFunctionType} key={key} />
+              <SvgIcon className="[&_svg]:size-8" name={key as EaseFunctionType} key={key} />
               <span className="mt-2 text-[12px]">{key}</span>
             </div>
           ))}

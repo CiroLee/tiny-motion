@@ -16,8 +16,6 @@ export default function ThemeSwitch() {
   const isClient = useIsClient();
   const [theme, setTheme] = useTheme();
 
-  console.log('theme: ', theme);
-
   const handleSetTheme = (theme: ThemeMode) => {
     if (typeof setTheme === 'function') {
       setTheme(theme);

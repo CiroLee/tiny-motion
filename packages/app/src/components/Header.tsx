@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="bg-background/80 backdrop-blue-sm border-line fixed top-0 left-0 z-(--header) flex h-(--header-height) w-full items-center justify-between border-b px-4 backdrop-saturate-200">
       <Link to="/" className="flex items-center gap-1">
-        <SvgIcon filePath="../assets/logo.svg" className="[&_svg]:size-10 [&_svg_path]:nth-[5]:fill-black dark:[&_svg_path]:nth-[5]:fill-white" />
+        <SvgIcon name="logo" className="[&_svg]:size-10 [&_svg_path]:nth-[5]:fill-black dark:[&_svg_path]:nth-[5]:fill-white" />
         <span className="font-semibold">tiny-motion</span>
       </Link>
       <div className="flex items-center gap-2">
