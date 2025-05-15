@@ -94,7 +94,7 @@ export default function UseGroupDoc() {
       <Heading as="h2" className="mb-4">
         UseGroup
       </Heading>
-      <p className="text-description">useGroup is used to control multiple elements to animate with the same parameters</p>
+      <p className="text-description mb-2">useGroup is used to control multiple elements to animate with the same parameters.</p>
       <Heading as="h4" className="my-4">
         basic
       </Heading>
@@ -122,7 +122,7 @@ export default function UseGroupDoc() {
         delay
       </Heading>
       <p className="mb-2">
-        <Tag colors="neutral">delay</Tag> can accept a number type value or a function that returns number type
+        <Tag colors="neutral">delay</Tag> can accept a number type value or a function that returns number type.
       </p>
       <Playground className="mb-4 flex flex-col justify-center gap-2 px-8">
         <div ref={ballRef4} className="size-[40px] bg-blue-500"></div>
@@ -139,7 +139,7 @@ export default function UseGroupDoc() {
         selectors
       </Heading>
       <p className="mb-2">
-        <Tag colors="neutral">useGroup</Tag> also supports selectors, it is easer to select same type elements to animate
+        <Tag colors="neutral">useGroup</Tag> also supports selectors, it is easer to select same type elements to animate.
       </p>
       <Playground className="mb-4 flex flex-col justify-center gap-2 px-8">
         <div className="square size-[40px] bg-blue-500"></div>
@@ -160,7 +160,7 @@ export default function UseGroupDoc() {
         <Link to="/motion-presets" className="text-blue-500 underline">
           presets
         </Link>{' '}
-        in useGroup
+        in useGroup.
       </p>
       <Playground className="mb-4 flex flex-col items-center justify-center gap-2 px-8">
         <div className="square2 size-[40px] bg-blue-500"></div>
@@ -183,7 +183,7 @@ export default function UseGroupDoc() {
         Props
       </Heading>
       <p>
-        <Tag colors="neutral">deps</Tag> is dependencies array, used like useEffect, and <Tag className="mb-2">{`UseGroupProps<T>`}</Tag> type below
+        <Tag colors="neutral">deps</Tag> is dependencies array, used like useEffect, and <Tag className="mb-2">{`UseGroupProps<T>`}</Tag> type below.
       </p>
       <ApiTable rows={propsRows} />
       <Heading as="h4" className="mt-4 mb-2">

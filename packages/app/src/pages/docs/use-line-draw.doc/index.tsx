@@ -62,7 +62,7 @@ export default function UseLineDrawDoc() {
       <Heading as="h2" className="mb-4">
         useLineDraw
       </Heading>
-      <p className="text-description mb-4">useLineDraw is used to make svg elements(such as path, circle) to have a line animation effect</p>
+      <p className="text-description mb-2">useLineDraw is used to make svg elements(such as path, circle) to have a line animation effect.</p>
       <Playground className="mb-4 flex flex-col items-center justify-center px-8">
         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path ref={path1Ref} d="M5 21c.5 -4.5 2.5 -8 7 -10" />
@@ -74,7 +74,7 @@ export default function UseLineDrawDoc() {
       </Playground>
       <CodeBlock code={code1} />
       <p className="my-4">
-        sometimes you need to animate lots of svg elements, then you can use <Tag colors="neutral">selectors</Tag> property to select elements
+        sometimes you need to animate lots of svg elements, then you can use <Tag colors="neutral">selectors</Tag> property to select elements.
       </p>
       <Playground className="mb-4 flex flex-col items-center justify-center px-8">
         <svg id="json" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">

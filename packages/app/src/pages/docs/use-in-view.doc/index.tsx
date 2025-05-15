@@ -76,7 +76,7 @@ export default function UseInViewDoc() {
       <Heading as="h2" className="mb-4">
         useInView
       </Heading>
-      <p className="text-description mb-4">useInView is used to animate elements when target enters or leaves the viewport</p>
+      <p className="text-description mb-2">useInView is used to animate elements when target enters or leaves the viewport.</p>
       <Playground ref={pg1Ref} className="mb-4 h-44 overflow-y-auto">
         <div className="fruit flex h-full items-center bg-green-300 pl-3">
           <p className="text-4xl font-bold text-black">🍎Apple</p>
@@ -89,7 +89,7 @@ export default function UseInViewDoc() {
         </div>
       </Playground>
       <CodeBlock code={code1} className="mb-4" />
-      <p className="mt-6 mb-2">you can also use width other hook to animate multiple elements</p>
+      <p className="mt-6 mb-2">you can also use with other hooks to animate multiple elements.</p>
       <Playground ref={pg2Ref} className="mb-4 h-44 overflow-y-auto">
         <div className="flex h-60 items-center justify-center bg-pink-200 text-2xl text-black">control other elements</div>
         <div ref={targetRef} className="flex h-60 w-full items-center justify-center gap-2">

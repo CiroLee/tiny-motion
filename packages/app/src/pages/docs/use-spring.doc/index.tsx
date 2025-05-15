@@ -29,7 +29,9 @@ export default function UseSpringDoc() {
       <Heading as="h2" className="mb-4">
         useSpring
       </Heading>
-      <p className="mb-2">useSpring is used to simulate the real physical spring motion effect. Note: the function doesn't include time parameter, it's calculated by the function itself</p>
+      <p className="text-description mb-2">
+        useSpring is used to simulate the real physical spring motion effect. Note: the function doesn't include time parameter, it's calculated by the function itself.
+      </p>
       <Playground className="relative mb-4 h-110 px-8">
         <div className="bg-primary relative top-3 ml-[33%] size-16 rounded-full" style={{ transform: `translateY(${y}px)` }}></div>
         <div className="border-box bg-background absolute top-1/2 right-2 flex h-[94%] w-60 -translate-y-1/2 flex-col justify-between space-y-3 rounded p-2 shadow-[-1px_0_10px_2px] shadow-neutral-200 dark:shadow-neutral-800">

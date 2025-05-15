@@ -8,7 +8,7 @@ import PageNavigate from '@/components/PageNavigate';
 import ApiTable from '@/components/ApiTable';
 import { rows } from './api';
 
-const code = `import { animate } from '@cirolee/tiny-motion;
+const code = `import { animate } from '@cirolee/tiny-motion';
 
 export default function App() {
  const ref = useRef<HTMLDivElement>(null);
@@ -51,7 +51,7 @@ export default function AnimateDoc() {
       <Heading as="h2" className="mb-4">
         animate
       </Heading>
-      <p className="text-description mb-4">animate is universal method for animating elements. It can also use preset motions</p>
+      <p className="text-description mb-2">animate is universal method for animating elements. It can also use preset motions.</p>
       <Playground className="relative mb-3 flex h-60 items-center justify-center overflow-hidden rounded-md">
         <div ref={ref} className="size-[120px] rounded-lg bg-blue-500"></div>
         <Button size="sm" className="absolute right-3 bottom-3" onClick={handleClick}>

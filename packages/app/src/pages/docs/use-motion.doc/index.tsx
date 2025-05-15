@@ -29,7 +29,7 @@ export default function UseMotionDoc() {
       <Heading as="h2" className="mb-4">
         useMotion
       </Heading>
-      <p>useMotion is used to perform animation using preset common animation parameters</p>
+      <p className="text-description">useMotion is used to perform animation using preset common animation parameters.</p>
 
       <Heading as="h4" className="my-4">
         Signature

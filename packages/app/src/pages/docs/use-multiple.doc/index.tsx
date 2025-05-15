@@ -80,7 +80,7 @@ export default function UseMultipleDoc() {
       <Heading as="h2" className="mb-4">
         useMultiple
       </Heading>
-      <p className="text-description mb-4">useMultiple is used to control the animation of multiple elements using independent animation parameters</p>
+      <p className="text-description mb-2">useMultiple is used to control the animation of multiple elements using independent animation parameters.</p>
       <Heading as="h4" className="mb-4">
         basic
       </Heading>
@@ -101,7 +101,7 @@ export default function UseMultipleDoc() {
         <Link to="/motion-presets" className="text-blue-500 underline">
           presets
         </Link>{' '}
-        in useMultiple
+        in useMultiple.
       </p>
       <Playground className="mb-4 flex flex-col items-center justify-center gap-2 px-8">
         <div ref={ballRef4} className="size-[40px] bg-blue-500"></div>
@@ -124,7 +124,7 @@ export default function UseMultipleDoc() {
         Props
       </Heading>
       <p>
-        <Tag colors="neutral">deps</Tag> is dependencies array, used like useEffect, and <Tag className="mb-2" colors="neutral">{`UseMultipleProps<T>`}</Tag> type below
+        <Tag colors="neutral">deps</Tag> is dependencies array, used like useEffect, and <Tag className="mb-2" colors="neutral">{`UseMultipleProps<T>`}</Tag> type below.
       </p>
       <ApiTable rows={propsRows} styles={{ description: { width: 360 } }} />
       <Heading as="h4" className="my-4">

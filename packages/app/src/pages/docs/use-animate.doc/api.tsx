@@ -12,7 +12,7 @@ export const returnRows: ApiTableRow[] = [
     name: 'AnimationController',
     desc: (
       <>
-        the element interface <Tag>animate()</Tag> method, it returns the created <Tag>Animation</Tag> object instance
+        the element interface <Tag colors="secondary">animate()</Tag> method, it returns the created <Tag colors="secondary">Animation</Tag> object instance
       </>
     ),
     type: (
