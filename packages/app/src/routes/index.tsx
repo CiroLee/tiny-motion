@@ -102,7 +102,7 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-value.doc')),
             meta: {
               name: 'useValue',
-              level: 'non-waapi',
+              level: 'js',
               type: 'hook'
             }
           },
@@ -112,7 +112,7 @@ export const router = createBrowserRouter([
             Component: lazy(() => import('../pages/docs/use-spring.doc')),
             meta: {
               name: 'useSpring',
-              level: 'non-waapi',
+              level: 'js',
               type: 'hook'
             }
           },
