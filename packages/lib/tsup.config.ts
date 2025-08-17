@@ -9,6 +9,7 @@ export default defineConfig((options: Options) => {
     minify: !options.watch,
     watch: options.watch,
     clean: true,
-    platform: 'browser'
+    platform: 'browser',
+    external: ['react', 'react-dom']
   };
 });
