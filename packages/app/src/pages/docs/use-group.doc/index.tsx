@@ -174,7 +174,7 @@ export default function UseGroupDoc() {
       <Heading as="h4" className="my-4">
         Signature
       </Heading>
-      <CodeBlock code="function useGroup<T extends DOMElement>(props: useGroupProps<T>, deps: any[]): AnimateController" />
+      <CodeBlock code="function useGroup<T extends DOMElement>(props: useGroupProps<T>, deps?: unknown[]): AnimateController" />
       <Heading as="h4" className="my-4">
         Types
       </Heading>

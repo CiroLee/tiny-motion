@@ -9,7 +9,7 @@ import type { MotionName } from './useMotion';
 
 interface useGroupProps<T> {
   selectors?: string[];
-  refs?: React.MutableRefObject<T | null>[];
+  refs?: React.RefObject<T | null>[];
   keyframes?: Keyframes;
   motion?: MotionName;
   options?: SpecialAnimationOptions;
@@ -20,19 +20,8 @@ interface useGroupProps<T> {
   onResume?: () => void;
 }
 
-export function useGroup<T extends DOMElement>(props: useGroupProps<T>, deps: any[]): AnimateController {
-  const {
-    selectors = [],
-    refs,
-    keyframes,
-    motion,
-    options = 0,
-    onComplete,
-    onStart,
-    onPause,
-    onCancel,
-    onResume
-  } = props;
+export function useGroup<T extends DOMElement>(props: useGroupProps<T>, deps?: unknown[]): AnimateController {
+  const { selectors = [], refs, keyframes, motion, options = 0, onComplete, onStart, onPause, onCancel, onResume } = props;
   const animations = useRef<(Animation | undefined)[]>([]);
   const targets = useRef<T[]>(null);
 

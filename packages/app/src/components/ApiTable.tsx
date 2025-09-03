@@ -54,13 +54,15 @@ function renderType(type: React.ReactNode) {
 export default function ApiTable({ rows, omitHeads = [], styles = { name: {}, default: {}, description: {}, required: {} } }: ApiTableProps) {
   const _header = header.filter((item) => !omitHeads.includes(item));
   return (
-    <Table fixedHeader>
+    <Table fixedHeader className="max-h-[unset]">
       <TableHeader className="z-2">
-        {_header.map((item) => (
-          <TableHeaderCell key={item} style={styles[item.toLowerCase() as keyof ApiTableProps['styles']]}>
-            {item}
-          </TableHeaderCell>
-        ))}
+        <TableRow>
+          {_header.map((item) => (
+            <TableHeaderCell key={item} style={styles[item.toLowerCase() as keyof ApiTableProps['styles']]}>
+              {item}
+            </TableHeaderCell>
+          ))}
+        </TableRow>
       </TableHeader>
       <TableBody>
         {rows.map((item, index) => (

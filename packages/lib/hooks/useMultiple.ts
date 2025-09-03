@@ -8,7 +8,7 @@ import * as presets from './presets';
 import type { AnimationOptions, AnimateController, DOMElement, Keyframes, _KeyframeAnimationOptions } from './types';
 import type { MotionName } from './useMotion';
 interface MultipleConfig<T> {
-  ref: React.MutableRefObject<T | null>;
+  ref: React.RefObject<T | null>;
   keyframes?: Keyframes;
   options?: AnimationOptions;
   motion?: MotionName;
@@ -56,17 +56,7 @@ function combineMotion(baseMotion?: MotionName, motion?: MotionName) {
   return baseMotion && presets[baseMotion] ? presets[baseMotion] : undefined;
 }
 
-function combineKeyframes({
-  baseKeyframes,
-  keyframes,
-  baseMotion,
-  motion
-}: {
-  baseKeyframes?: Keyframes;
-  keyframes?: Keyframes;
-  baseMotion?: MotionName;
-  motion?: MotionName;
-}) {
+function combineKeyframes({ baseKeyframes, keyframes, baseMotion, motion }: { baseKeyframes?: Keyframes; keyframes?: Keyframes; baseMotion?: MotionName; motion?: MotionName }) {
   if (!baseKeyframes && !keyframes) {
     return combineMotion(baseMotion, motion);
   }
@@ -78,7 +68,7 @@ function combineKeyframes({
   }
   return keyframes;
 }
-export function useMultiple<T extends DOMElement>(props: useMultipleProps<T>, deps: any[]): AnimateController {
+export function useMultiple<T extends DOMElement>(props: useMultipleProps<T>, deps?: unknown[]): AnimateController {
   const { baseKeyframes, baseOptions, baseMotion, config, onStart, onCancel, onComplete, onPause, onResume } = props;
   const animations = useRef<(Animation | undefined)[]>([]);
 

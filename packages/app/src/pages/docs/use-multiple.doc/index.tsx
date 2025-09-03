@@ -115,7 +115,7 @@ export default function UseMultipleDoc() {
       <Heading as="h4" className="my-4">
         Signature
       </Heading>
-      <CodeBlock code="function useMultiple<T extends DOMElement>(props: useMultipleProps<T>, deps: any[]): AnimateController" />
+      <CodeBlock code="function useMultiple<T extends DOMElement>(props: useMultipleProps<T>, deps?: unknown[]): AnimateController" />
       <Heading as="h4" className="my-4">
         Types
       </Heading>
