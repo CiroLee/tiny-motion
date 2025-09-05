@@ -307,3 +307,5 @@ export default function App() {
   )
 }
 ```
+
+more details please refer to [documentations](https://tiny-motion.vercel.app/docs/overview)
